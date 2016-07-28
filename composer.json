@@ -1,5 +1,9 @@
 {
     "require": {
-        "phpmd/phpmd" : "@stable"
+        "phpmd/phpmd" : "@stable",
+        "phpmetrics/phpmetrics": "^1.10",
+        "sebastian/phpcpd": "^2.0",
+        "squizlabs/php_codesniffer": "^2.6",
+        "apigen/apigen": "4.0.1"
     }
 }
