@@ -40,7 +40,7 @@ $phpmd      = 'vendor/phpmd/phpmd/src/bin/phpmd';
 $phpmetrics = 'php vendor/phpmetrics/phpmetrics/bin/phpmetrics';
 $phpcs      = 'php phpcs.phar';
 $phpcpd     = 'vendor/sebastian/phpcpd/composer/bin/phpcpd';
-$apigen     = 'vendor/apigen/apigen/bin/apigen';
+$phpdoc     = 'vendor/phpdocumentor/phpdocumentor/bin/phpdoc';
 
 echo '********************************************************************************************************************' . "\n";
 echo date('Y-m-d H:i:s') . ' : Launch Analyzers : ' . "\n";
@@ -52,7 +52,7 @@ exec_cmd("$phpmd '$project_dir' text codesize,design,unusedcode --reportfile '$r
 exec_cmd("$phpmetrics --report-html='$report_dir/phpmetrics.html' --level=50 -v '$project_dir'");
 exec_cmd("$phpcs -vp --extensions=php --error-severity=5 --warning-severity=8 --standard=PSR2 '$project_dir' >> '$report_dir/phpcs.txt'");
 exec_cmd("$phpcpd -v --progress '$project_dir' >> '$report_dir/php_cpd.txt'");
-exec_cmd("$apigen generate --source='$project_dir' --destination='$report_dir/apigen' --todo --title='$project_name' --php --download");
+exec_cmd("$phpdoc run -d '$project_dir' -t '$report_dir/phpdoc'");
 
 echo "\n";
 echo '' . date('Y-m-d H:i:s') . ' : Done. ' . "\n";

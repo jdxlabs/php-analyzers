@@ -4,6 +4,6 @@
         "phpmetrics/phpmetrics": "^1.10",
         "sebastian/phpcpd": "^2.0",
         "squizlabs/php_codesniffer": "^2.6",
-        "apigen/apigen": "4.0.1"
+        "phpdocumentor/phpdocumentor": "2.9.0"
     }
 }
